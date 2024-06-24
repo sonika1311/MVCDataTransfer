@@ -35,22 +35,5 @@ namespace MVCDataTransfer.Controllers
             ViewBag.Colors = Colors;
             return View();
         }
-        public RedirectToRouteResult Index3(int? id, string name, double price=0)
-        {
-            //ViewData["Id"]= id; ViewBag.Name = name;
-            TempData["Id"] = id; TempData["Name"] = name;
-            TempData["Price"] = price;
-            return RedirectToAction("Index4");
-        }
-        public ViewResult Index4()
-        {
-            return View();
-        }
-        public RedirectToRouteResult Index5(int? id, string name, double? price)
-        {
-            TempData["Id"] = id; TempData["Name"] = name;
-            TempData["Price"] = price;
-            return RedirectToAction("Index1", "Test");
-        }
     }
 }
