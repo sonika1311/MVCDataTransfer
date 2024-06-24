@@ -22,5 +22,18 @@ namespace MVCDataTransfer.Controllers
             ViewData["Colors"] = Colors;
             return View();
         }
+        public ViewResult Index2(int? id, string name, double price=0)
+        {
+            ViewBag.Id = id;
+            ViewBag.Name = name;
+            ViewBag.Price = price;
+            return View();
+        }
+        public ViewResult Display2()
+        {
+            List<string> Colors = new List<string>() { "Red", "Blue", "Pink", "Black", "White", "Green", "Brown", "Purple" };
+            ViewBag.Colors = Colors;
+            return View();
+        }
     }
 }

@@ -8,32 +8,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index1</title>
+    <title>Index2</title>
 </head>
 <body>
-    <div> 
+    <div>
         <table border="1" align="center" width="15%">
             <caption>Product Details</caption>
 
+            <tr>
+                <td>ID-viewBag</td>
+                <td>@ViewBag.Id</td>
+            </tr>
             <tr>
                 <td>ID-viewData</td>
                 <td>@ViewData["Id"]</td>
             </tr>
             <tr>
-                <td>ID-viewbag</td>
-                <td>@ViewBag.Id</td>
-            </tr>
-            <tr>
                 <td>Name</td>
-                <td>@ViewData["Name"]</td>
+                <td>@ViewBag.Name</td>
             </tr>
             <tr>
                 <td>Price</td>
                 <td>
                     @{
-                        double price = Convert.ToDouble(ViewData["Price"]);
+                        double price = ViewBag.Price;
                         double finalPrice = price + (price * 0.1);
-                        @finalPrice;
+                        @finalPrice
                     }
                 </td>
             </tr>
