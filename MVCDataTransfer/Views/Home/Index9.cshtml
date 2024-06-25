@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index9</title>
+</head>
+<body>
+    @{ 
+        //dynamic id = Session["Id"];
+        int id = Convert.ToInt32(Session["Id"]);
+        string name = Session["Name"].ToString();
+        double price = Double.Parse(Session["Price"].ToString());
+        double finalPrice = price + (0.1 * price);
+
+    }
+    <div>
+        <table border="1" align="center" width="15%">
+            <caption>Product Details</caption>
+
+            <tr>
+                <td>ID</td>
+                @*<td>@id.GetType()"</td>*@
+                <td>@id</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@name</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    @finalPrice
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

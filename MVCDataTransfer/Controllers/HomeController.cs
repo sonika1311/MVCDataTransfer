@@ -73,5 +73,25 @@ namespace MVCDataTransfer.Controllers
             return View();
         }
         #endregion
+        #region Session
+        public RedirectToRouteResult Index8(int? id, string name, double? price)
+        {
+            Session["Id"] = id;
+            Session["Name"] = name;
+            Session["Price"] = price;
+            return RedirectToAction("Index9");
+        }
+        public ViewResult Index9()
+        {
+            return View();
+        }
+        public RedirectToRouteResult Index10(int? id, string name, double? price)
+        {
+            Session["Id"] = id;
+            Session["Name"] = name;
+            Session["Price"] = price;
+            return RedirectToAction("Index3","Test");
+        }
+        #endregion
     }
 }
