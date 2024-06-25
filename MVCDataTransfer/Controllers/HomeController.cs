@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,6 +7,7 @@ namespace MVCDataTransfer.Controllers
 {
     public class HomeController : Controller
     {
+        #region ViewData
         // GET: Home
         public ViewResult Index1(int? id, string name, double? price)
         {
@@ -22,7 +22,9 @@ namespace MVCDataTransfer.Controllers
             ViewData["Colors"] = Colors;
             return View();
         }
-        public ViewResult Index2(int? id, string name, double price=0)
+        #endregion
+        #region ViewBag
+        public ViewResult Index2(int? id, string name, double price = 0)
         {
             ViewBag.Id = id;
             ViewBag.Name = name;
@@ -35,7 +37,9 @@ namespace MVCDataTransfer.Controllers
             ViewBag.Colors = Colors;
             return View();
         }
-        public RedirectToRouteResult Index3(int? id, string name, double price=0)
+        #endregion
+        #region TempData
+        public RedirectToRouteResult Index3(int? id, string name, double price = 0)
         {
             //ViewData["Id"]= id; ViewBag.Name = name;
             TempData["Id"] = id; TempData["Name"] = name;
@@ -52,5 +56,22 @@ namespace MVCDataTransfer.Controllers
             TempData["Price"] = price;
             return RedirectToAction("Index1", "Test");
         }
+        #endregion
+        #region Cookeis
+        public ViewResult Index6(int? id, string name, double? price)
+        {
+            HttpCookie cookie = new HttpCookie("Product Cookie");
+            cookie["Id"] = id.ToString();
+            cookie["Name"] = name;
+            cookie["Price"] = price.ToString();
+            cookie.Expires = DateTime.Now.AddDays(3);// adding this line makes it persistent cookie
+            Response.Cookies.Add(cookie);
+            return View();
+        }
+        public ViewResult Index7()
+        {
+            return View();
+        }
+        #endregion
     }
 }
