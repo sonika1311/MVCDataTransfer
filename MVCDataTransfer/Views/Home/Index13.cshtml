@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index13</title>
+</head>
+<body>
+    @{ 
+        int? id = Convert.ToInt32(ViewData.Eval("Id"));
+        //string name = ViewData.Eval("Name").ToString();//this does not handles null
+        string name = Convert.ToString(ViewData.Eval("Name"));//this handles null
+        double? price = Convert.ToDouble(ViewData.Eval("Price"));
+        double? finalPrice = price + (0.1 * price);
+    }
+    <div>
+        <table border="1" align="center" width="25%">
+            <caption>Product Details</caption>
+            <tr>
+                <td>Id</td>
+                <td>@id</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@name</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>@finalPrice</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

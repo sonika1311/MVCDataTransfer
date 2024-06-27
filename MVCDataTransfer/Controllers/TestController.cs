@@ -29,5 +29,10 @@ namespace MVCDataTransfer.Controllers
         {
             return View();
         }
+        public ViewResult Index5(int? id, string name, double? price)
+        {
+            var product = new { Id = id, Name = name, Price = price };
+            return View(product);
+        }
     }
 }

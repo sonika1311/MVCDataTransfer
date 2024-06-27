@@ -108,7 +108,17 @@ namespace MVCDataTransfer.Controllers
             return View();
         }
         #endregion
-        #region Anonymous
+        #region Anonymous Types
+        public ViewResult Index13(int? id, string name, double? price)
+        {
+            var product = new { Id=id, Name=name, Price=price };
+            return View(product);
+        }
+        public RedirectToRouteResult Index14(int? id, string name, double? price)
+        {
+            var product = new { Id = id, Name = name, Price = price };
+            return RedirectToAction("Index5", "Test", product);
+        }
         #endregion
     }
 }
