@@ -25,5 +25,9 @@ namespace MVCDataTransfer.Controllers
         {
             return View();
         }
+        public ViewResult Index4()
+        {
+            return View();
+        }
     }
 }

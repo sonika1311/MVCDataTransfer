@@ -93,5 +93,22 @@ namespace MVCDataTransfer.Controllers
             return RedirectToAction("Index3","Test");
         }
         #endregion
+        #region Application Memory
+        public ViewResult Index11(int? id, string name, double? price)
+        {
+            HttpContext.Application.Lock();
+            HttpContext.Application["Id"] = id;
+            HttpContext.Application["Name"] = name;
+            HttpContext.Application["Price"] = price;
+            HttpContext.Application.UnLock();
+            return View();
+        }
+        public ViewResult Index12()
+        {
+            return View();
+        }
+        #endregion
+        #region Anonymous
+        #endregion
     }
 }
