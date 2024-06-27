@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
+using MVCDataTransfer.Models;
 
 namespace MVCDataTransfer.Controllers
 {
@@ -119,6 +120,23 @@ namespace MVCDataTransfer.Controllers
             var product = new { Id = id, Name = name, Price = price };
             return RedirectToAction("Index5", "Test", product);
         }
+        #endregion
+        #region Model Object
+        public ViewResult Index15(int? id, string name, double? price)
+        {
+            Product product = new Product{ Id = id, Name = name, Price = price };
+            return View(product);
+            //return View("Index17",product); //this also works
+        }
+        public RedirectToRouteResult Index16(Product product)
+        {
+            return RedirectToAction("Index6", "Test", product);
+        }
+        public ViewResult Index17(Product product)
+        {
+            return View(product); 
+        }
+
         #endregion
     }
 }

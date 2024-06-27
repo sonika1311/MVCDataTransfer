@@ -98,6 +98,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +122,9 @@
     <Content Include="Views\Test\Index4.cshtml" />
     <Content Include="Views\Home\Index13.cshtml" />
     <Content Include="Views\Test\Index5.cshtml" />
+    <Content Include="Views\Home\Index17.cshtml" />
+    <Content Include="Views\Home\Index15.cshtml" />
+    <Content Include="Views\Test\Index6.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
